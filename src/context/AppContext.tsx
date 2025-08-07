@@ -1,0 +1,150 @@
+import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { StudentData, Enrollment, Polo, User, Level } from '../types';
+
+interface AppContextType {
+  // Student registration
+  currentStudent: Partial<StudentData> | null;
+  setCurrentStudent: (student: Partial<StudentData> | null) => void;
+  
+  // Students database
+  students: StudentData[];
+  addStudent: (student: StudentData) => void;
+  
+  // Enrollments
+  enrollments: Enrollment[];
+  addEnrollment: (enrollment: Enrollment) => void;
+  
+  // Polos
+  polos: Polo[];
+  addPolo: (polo: Polo) => void;
+  updatePolo: (id: string, polo: Polo) => void;
+  deletePolo: (id: string) => void;
+  
+  // Authentication
+  currentUser: User | null;
+  login: (email: string, password: string, role: 'admin' | 'student') => boolean;
+  logout: () => void;
+}
+
+const AppContext = createContext<AppContextType | undefined>(undefined);
+
+// Mock data
+const mockPolos: Polo[] = [
+  {
+    id: '1',
+    name: 'Igreja Central - Palmas',
+    address: {
+      street: 'Rua das Flores',
+      number: '100',
+      neighborhood: 'Centro',
+      city: 'Palmas',
+      state: 'TO',
+      cep: '77000-000'
+    },
+    pastor: 'Pastor João Silva',
+    coordinator: {
+      name: 'Maria Santos',
+      cpf: '123.456.789-00'
+    },
+    teachers: ['Ana Costa', 'Pedro Lima'],
+    assistants: ['Carlos Oliveira'],
+    cafeteriaWorkers: ['Lucia Ferreira'],
+    availableLevels: ['NIVEL_I', 'NIVEL_II', 'NIVEL_III', 'NIVEL_IV']
+  },
+  {
+    id: '2',
+    name: 'Igreja Norte - Palmas',
+    address: {
+      street: 'Avenida Norte',
+      number: '250',
+      neighborhood: 'Plano Diretor Norte',
+      city: 'Palmas',
+      state: 'TO',
+      cep: '77001-000'
+    },
+    pastor: 'Pastor Carlos Mendes',
+    coordinator: {
+      name: 'José Rodrigues',
+      cpf: '987.654.321-00'
+    },
+    teachers: ['Sandra Silva', 'Roberto Santos'],
+    availableLevels: ['NIVEL_I', 'NIVEL_II', 'NIVEL_III']
+  }
+];
+
+export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [currentStudent, setCurrentStudent] = useState<Partial<StudentData> | null>(null);
+  const [students, setStudents] = useState<StudentData[]>([]);
+  const [enrollments, setEnrollments] = useState<Enrollment[]>([]);
+  const [polos, setPolos] = useState<Polo[]>(mockPolos);
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
+
+  const addStudent = (student: StudentData) => {
+    setStudents(prev => [...prev, student]);
+  };
+
+  const addEnrollment = (enrollment: Enrollment) => {
+    setEnrollments(prev => [...prev, enrollment]);
+  };
+
+  const addPolo = (polo: Polo) => {
+    setPolos(prev => [...prev, polo]);
+  };
+
+  const updatePolo = (id: string, updatedPolo: Polo) => {
+    setPolos(prev => prev.map(polo => polo.id === id ? updatedPolo : polo));
+  };
+
+  const deletePolo = (id: string) => {
+    setPolos(prev => prev.filter(polo => polo.id !== id));
+  };
+
+  const login = (email: string, password: string, role: 'admin' | 'student'): boolean => {
+    // Mock authentication
+    if (role === 'admin' && email === 'admin@ibuc.com.br' && password === 'admin123') {
+      setCurrentUser({ id: '1', email, role: 'admin' });
+      return true;
+    }
+    // For students, check if CPF exists and mock password validation
+    if (role === 'student') {
+      const student = students.find(s => s.cpf === email);
+      if (student && password === 'senha123') {
+        setCurrentUser({ id: '2', email, role: 'student', studentId: student.id });
+        return true;
+      }
+    }
+    return false;
+  };
+
+  const logout = () => {
+    setCurrentUser(null);
+  };
+
+  return (
+    <AppContext.Provider value={{
+      currentStudent,
+      setCurrentStudent,
+      students,
+      addStudent,
+      enrollments,
+      addEnrollment,
+      polos,
+      addPolo,
+      updatePolo,
+      deletePolo,
+      currentUser,
+      login,
+      logout
+    }}>
+      {children}
+    </AppContext.Provider>
+  );
+};
+
+export const useApp = () => {
+  const context = useContext(AppContext);
+  if (context === undefined) {
+    throw new Error('useApp must be used within an AppProvider');
+  }
+  return context;
+};
