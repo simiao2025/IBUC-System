@@ -144,6 +144,47 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     setCurrentUser(null);
   };
 
+  const hasAccessToAllPolos = (): boolean => {
+    if (!currentUser || currentUser.role !== 'admin') return false;
+    if (!currentUser.adminUser) return true; // Admin padrão tem acesso geral
+
+    return currentUser.adminUser.accessLevel === 'geral' &&
+           ['coordenador_geral', 'diretor_geral'].includes(currentUser.adminUser.role);
+  };
+
+  const hasAccessToPolo = (poloId: string): boolean => {
+    if (!currentUser || currentUser.role !== 'admin') return false;
+
+    // Se tem acesso geral, pode acessar qualquer polo
+    if (hasAccessToAllPolos()) return true;
+
+    // Se tem acesso específico, só pode acessar seu polo
+    if (currentUser.adminUser?.accessLevel === 'polo_especifico') {
+      return currentUser.adminUser.poloId === poloId;
+    }
+
+    return false;
+  };
+
+  const getCurrentUserAccessLevel = (): AccessLevel | null => {
+    if (!currentUser || currentUser.role !== 'admin') return null;
+    return currentUser.adminUser?.accessLevel || 'geral';
+  };
+
+  const getUserAllowedPolos = (): string[] => {
+    if (!currentUser || currentUser.role !== 'admin') return [];
+
+    if (hasAccessToAllPolos()) {
+      return polos.map(polo => polo.id);
+    }
+
+    if (currentUser.adminUser?.accessLevel === 'polo_especifico' && currentUser.adminUser.poloId) {
+      return [currentUser.adminUser.poloId];
+    }
+
+    return [];
+  };
+
   return (
     <AppContext.Provider value={{
       currentStudent,
