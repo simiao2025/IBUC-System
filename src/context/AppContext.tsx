@@ -52,10 +52,25 @@ const mockPolos: Polo[] = [
       name: 'Maria Santos',
       cpf: '123.456.789-00'
     },
-    teachers: ['Ana Costa', 'Pedro Lima'],
-    assistants: ['Carlos Oliveira'],
-    cafeteriaWorkers: ['Lucia Ferreira'],
-    availableLevels: ['NIVEL_I', 'NIVEL_II', 'NIVEL_III', 'NIVEL_IV']
+    director: {
+      name: 'Ana Costa',
+      cpf: '111.222.333-44'
+    },
+    teachers: ['Pedro Lima', 'Carlos Oliveira'],
+    assistants: ['Lucia Ferreira'],
+    secretary: {
+      name: 'Rosa Silva',
+      cpf: '555.666.777-88'
+    },
+    treasurer: {
+      name: 'João Santos',
+      cpf: '999.888.777-66'
+    },
+    cafeteriaWorkers: ['Marta Lima'],
+    availableLevels: ['NIVEL_I', 'NIVEL_II', 'NIVEL_III', 'NIVEL_IV'],
+    isActive: true,
+    createdAt: '2024-01-01',
+    staff: []
   },
   {
     id: '2',
@@ -74,7 +89,10 @@ const mockPolos: Polo[] = [
       cpf: '987.654.321-00'
     },
     teachers: ['Sandra Silva', 'Roberto Santos'],
-    availableLevels: ['NIVEL_I', 'NIVEL_II', 'NIVEL_III']
+    availableLevels: ['NIVEL_I', 'NIVEL_II', 'NIVEL_III'],
+    isActive: true,
+    createdAt: '2024-01-15',
+    staff: []
   }
 ];
 
