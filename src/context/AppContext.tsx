@@ -199,7 +199,11 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
       deletePolo,
       currentUser,
       login,
-      logout
+      logout,
+      hasAccessToAllPolos,
+      hasAccessToPolo,
+      getCurrentUserAccessLevel,
+      getUserAllowedPolos
     }}>
       {children}
     </AppContext.Provider>
