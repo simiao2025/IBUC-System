@@ -118,6 +118,7 @@ const EnrollmentPage: React.FC = () => {
             </p>
             <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
               <div className="text-left space-y-2">
+                <p><strong>Número da Matrícula:</strong> <span className="text-xl font-bold text-green-700">{enrollmentNumber}</span></p>
                 <p><strong>Aluno:</strong> {currentStudent?.name}</p>
                 <p><strong>Nível:</strong> {LEVELS[formData.level as Level]}</p>
                 <p><strong>Polo:</strong> {selectedPolo?.name}</p>
