@@ -36,6 +36,15 @@ const Button: React.FC<ButtonProps> = ({
 
   const classes = `${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`;
 
+  if (asChild) {
+    // When asChild is true, clone the first child and pass the button props to it
+    const child = React.Children.only(children) as React.ReactElement;
+    return React.cloneElement(child, {
+      className: `${classes} ${child.props.className || ''}`,
+      ...props,
+    });
+  }
+
   return (
     <button
       className={classes}
