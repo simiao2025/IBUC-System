@@ -71,9 +71,50 @@ export interface Polo {
   availableLevels: Level[];
 }
 
+// Tipos para funções administrativas
+export type AdminRole =
+  | 'coordenador_geral'
+  | 'diretor_geral'
+  | 'coordenador_polo'
+  | 'diretor_polo'
+  | 'professor'
+  | 'auxiliar'
+  | 'secretario'
+  | 'tesoureiro';
+
+export type AccessLevel = 'geral' | 'polo_especifico';
+
+export interface AdminUser {
+  id: string;
+  name: string;
+  email: string;
+  cpf: string;
+  phone: string;
+  role: AdminRole;
+  accessLevel: AccessLevel;
+  poloId?: string; // Para usuários com acesso específico a um polo
+  isActive: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface StaffMember {
+  id: string;
+  name: string;
+  cpf: string;
+  phone: string;
+  email: string;
+  role: AdminRole;
+  poloId: string;
+  isActive: boolean;
+  qualifications?: string[];
+  hireDate: string;
+}
+
 export interface User {
   id: string;
   email: string;
   role: 'admin' | 'student';
   studentId?: string;
+  adminUser?: AdminUser;
 }
