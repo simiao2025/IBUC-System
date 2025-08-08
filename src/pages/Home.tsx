@@ -159,72 +159,72 @@ const Home: React.FC = () => {
       </div>
 
       {/* Custom Animations */}
-      <style jsx>{`
+      <style>{`
         @keyframes fade-in {
           from { opacity: 0; }
           to { opacity: 1; }
         }
-        
+
         @keyframes slide-up {
-          from { 
-            opacity: 0; 
-            transform: translateY(50px); 
+          from {
+            opacity: 0;
+            transform: translateY(50px);
           }
-          to { 
-            opacity: 1; 
-            transform: translateY(0); 
+          to {
+            opacity: 1;
+            transform: translateY(0);
           }
         }
-        
+
         @keyframes fade-in-up {
-          from { 
-            opacity: 0; 
-            transform: translateY(30px); 
+          from {
+            opacity: 0;
+            transform: translateY(30px);
           }
-          to { 
-            opacity: 1; 
-            transform: translateY(0); 
+          to {
+            opacity: 1;
+            transform: translateY(0);
           }
         }
-        
+
         @keyframes scale-in {
-          from { 
-            opacity: 0; 
-            transform: scale(0.8); 
+          from {
+            opacity: 0;
+            transform: scale(0.8);
           }
-          to { 
-            opacity: 1; 
-            transform: scale(1); 
+          to {
+            opacity: 1;
+            transform: scale(1);
           }
         }
-        
+
         .animate-fade-in {
           animation: fade-in 1s ease-out;
         }
-        
+
         .animate-slide-up {
           animation: slide-up 1s ease-out;
         }
-        
+
         .animate-fade-in-up {
           animation: fade-in-up 1s ease-out;
         }
-        
+
         .animate-fade-in-up.delay-200 {
           animation-delay: 0.2s;
           animation-fill-mode: both;
         }
-        
+
         .animate-fade-in-up.delay-400 {
           animation-delay: 0.4s;
           animation-fill-mode: both;
         }
-        
+
         .animate-fade-in-up.delay-600 {
           animation-delay: 0.6s;
           animation-fill-mode: both;
         }
-        
+
         .animate-scale-in {
           animation: scale-in 1.2s ease-out 0.3s both;
         }
