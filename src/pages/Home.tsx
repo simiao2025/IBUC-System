@@ -24,6 +24,35 @@ const Home: React.FC = () => {
 
       {/* Main Content */}
       <div className="relative z-10 min-h-screen flex flex-col">
+        {/* Top Access Buttons */}
+        <div className="pt-8 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto flex justify-center gap-4 mb-8">
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="bg-white bg-opacity-20 backdrop-blur-sm border-white border-opacity-30 text-white hover:bg-white hover:text-purple-600 transition-all duration-300"
+            >
+              <Link to="/acesso-aluno" className="flex items-center">
+                <Users className="h-4 w-4 mr-2" />
+                Área do Aluno
+              </Link>
+            </Button>
+
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="bg-white bg-opacity-20 backdrop-blur-sm border-white border-opacity-30 text-white hover:bg-white hover:text-purple-600 transition-all duration-300"
+            >
+              <Link to="/admin" className="flex items-center">
+                <MapPin className="h-4 w-4 mr-2" />
+                Área Administrativa
+              </Link>
+            </Button>
+          </div>
+        </div>
+
         {/* Hero Section with Logo */}
         <div className="flex-1 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-8 animate-fade-in">
