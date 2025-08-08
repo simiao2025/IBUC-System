@@ -24,6 +24,12 @@ interface AppContextType {
   currentUser: User | null;
   login: (email: string, password: string, role: 'admin' | 'student') => boolean;
   logout: () => void;
+
+  // Admin access control
+  hasAccessToAllPolos: () => boolean;
+  hasAccessToPolo: (poloId: string) => boolean;
+  getCurrentUserAccessLevel: () => AccessLevel | null;
+  getUserAllowedPolos: () => string[];
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
