@@ -52,13 +52,23 @@ const EnrollmentPage: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const generateEnrollmentNumber = () => {
+    const year = new Date().getFullYear();
+    const randomNumber = Math.floor(Math.random() * 9999).toString().padStart(4, '0');
+    return `${year}${randomNumber}`;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm() || !currentStudent) return;
 
     setLoading(true);
-    
+
+    // Generate enrollment number
+    const newEnrollmentNumber = generateEnrollmentNumber();
+    setEnrollmentNumber(newEnrollmentNumber);
+
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
 
@@ -75,7 +85,7 @@ const EnrollmentPage: React.FC = () => {
     addEnrollment(enrollment);
     setLoading(false);
     setSuccess(true);
-    
+
     // Redirect after success
     setTimeout(() => {
       navigate('/');
