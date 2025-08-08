@@ -99,7 +99,7 @@ const EnrollmentPage: React.FC = () => {
 
   const poloOptions = polos.map(polo => ({
     value: polo.id,
-    label: polo.name
+    label: `${polo.name} - ${polo.address.neighborhood}, ${polo.address.city}/${polo.address.state}`
   }));
 
   const selectedPolo = polos.find(polo => polo.id === formData.polo);
