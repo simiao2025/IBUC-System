@@ -22,6 +22,8 @@ const EnrollmentPage: React.FC = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [agreementAccepted, setAgreementAccepted] = useState(false);
+  const [enrollmentNumber, setEnrollmentNumber] = useState('');
 
   useEffect(() => {
     if (!currentStudent?.name) {
