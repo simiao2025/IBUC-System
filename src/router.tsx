@@ -9,6 +9,8 @@ import StudentAccess from './pages/StudentAccess';
 import AdminAccess from './pages/AdminAccess';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import PoloManagement from './pages/admin/PoloManagement';
+import UserManagement from './pages/admin/UserManagement';
+import StaffManagement from './pages/admin/StaffManagement';
 
 // Protected Route Component
 const ProtectedRoute: React.FC<{ children: React.ReactNode; adminOnly?: boolean }> = ({ 
