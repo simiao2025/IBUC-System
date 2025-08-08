@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { StudentData, Enrollment, Polo, User, Level } from '../types';
+import { StudentData, Enrollment, Polo, User, AdminUser, AccessLevel } from '../types';
 
 interface AppContextType {
   // Student registration
