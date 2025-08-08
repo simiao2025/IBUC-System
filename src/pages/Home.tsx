@@ -158,33 +158,6 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* YouTube Video Section - Instructions */}
-        <div className="bg-black bg-opacity-30 py-8">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-6">
-              <Play className="h-12 w-12 mx-auto mb-4 text-red-400" />
-              <h3 className="text-xl font-bold text-white mb-4">
-                💡 Como Adicionar Vídeo do YouTube
-              </h3>
-              <div className="text-white text-sm space-y-2 text-left max-w-2xl mx-auto">
-                <p><strong>1. Obtenha o ID do vídeo:</strong> Na URL do YouTube (exemplo: youtube.com/watch?v=ABC123), copie "ABC123"</p>
-                <p><strong>2. Use o iframe:</strong> Substitua "VIDEO_ID" pelo ID copiado:</p>
-                <code className="block bg-black bg-opacity-30 p-3 rounded mt-2 text-xs">
-                  {`<iframe 
-  width="560" 
-  height="315" 
-  src="https://www.youtube.com/embed/VIDEO_ID" 
-  title="YouTube video player" 
-  frameBorder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-  allowFullScreen>
-</iframe>`}
-                </code>
-                <p><strong>3. Para responsivo:</strong> Envolva em uma div com classes Tailwind apropriadas</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Custom Animations */}
