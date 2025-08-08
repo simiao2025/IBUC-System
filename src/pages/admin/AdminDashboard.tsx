@@ -45,8 +45,8 @@ const AdminDashboard: React.FC = () => {
       bgColor: 'bg-green-50'
     },
     {
-      title: 'Polos Ativos',
-      value: polos.length,
+      title: 'Polos Acessíveis',
+      value: accessiblePolos.length,
       icon: MapPin,
       color: 'text-purple-600',
       bgColor: 'bg-purple-50'
