@@ -65,10 +65,25 @@ export interface Polo {
     name: string;
     cpf: string;
   };
+  director?: {
+    name: string;
+    cpf: string;
+  };
   teachers: string[];
   assistants?: string[];
+  secretary?: {
+    name: string;
+    cpf: string;
+  };
+  treasurer?: {
+    name: string;
+    cpf: string;
+  };
   cafeteriaWorkers?: string[];
   availableLevels: Level[];
+  isActive: boolean;
+  createdAt: string;
+  staff: StaffMember[];
 }
 
 // Tipos para funções administrativas
