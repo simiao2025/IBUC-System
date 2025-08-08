@@ -128,7 +128,21 @@ const AdminDashboard: React.FC = () => {
               />
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">Painel Administrativo</h1>
-                <p className="text-sm text-gray-600">IBUC - Palmas, TO</p>
+                <p className="text-sm text-gray-600">
+                  IBUC - Palmas, TO
+                  {currentUser?.adminUser && (
+                    <span className="ml-2 px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">
+                      {currentUser.adminUser.role === 'coordenador_geral' && 'Coordenador Geral'}
+                      {currentUser.adminUser.role === 'diretor_geral' && 'Diretor Geral'}
+                      {currentUser.adminUser.role === 'coordenador_polo' && 'Coordenador de Polo'}
+                      {currentUser.adminUser.role === 'diretor_polo' && 'Diretor de Polo'}
+                      {currentUser.adminUser.role === 'professor' && 'Professor'}
+                      {currentUser.adminUser.role === 'auxiliar' && 'Auxiliar'}
+                      {currentUser.adminUser.role === 'secretario' && 'Secretário(a)'}
+                      {currentUser.adminUser.role === 'tesoureiro' && 'Tesoureiro(a)'}
+                    </span>
+                  )}
+                </p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -212,7 +226,7 @@ const AdminDashboard: React.FC = () => {
                 ))}
               </div>
             ) : (
-              <p className="text-gray-500 text-center py-4">Nenhuma matrícula registrada ainda</p>
+              <p className="text-gray-500 text-center py-4">Nenhuma matr��cula registrada ainda</p>
             )}
           </Card>
 
