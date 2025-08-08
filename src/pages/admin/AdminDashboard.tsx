@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
+import { useAccessControl } from '../../components/AccessControl';
 import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
-import { 
-  Users, 
-  MapPin, 
-  BookOpen, 
-  UserCheck, 
+import {
+  Users,
+  MapPin,
+  BookOpen,
+  UserCheck,
   Calendar,
   Award,
   BarChart3,
