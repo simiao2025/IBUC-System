@@ -16,7 +16,18 @@ import {
 } from 'lucide-react';
 
 const AdminDashboard: React.FC = () => {
-  const { students, enrollments, polos, logout } = useApp();
+  const { students, enrollments, polos, logout, currentUser } = useApp();
+  const {
+    canManageUsers,
+    canManageStaff,
+    canManagePolos,
+    canViewReports,
+    canManageEnrollments,
+    getFilteredPolos
+  } = useAccessControl();
+
+  // Filtra polos baseado no nível de acesso do usuário
+  const accessiblePolos = getFilteredPolos(polos);
 
   const stats = [
     {
