@@ -1,204 +1,234 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Users, BookOpen, MapPin, Award } from 'lucide-react';
+import { Calendar, Users, MapPin, Play } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 
 const Home: React.FC = () => {
   return (
-    <div className="space-y-16">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-red-600 via-red-500 to-orange-500 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="text-center">
-            <div className="mb-8">
-              <img
-                src="https://ibuc.com.br/wp-content/uploads/2023/05/logo-site.png"
-                alt="IBUC Logo"
-                className="h-20 w-auto mx-auto mb-6"
-              />
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                IBUC - Palmas - TO
-              </h1>
-              <p className="text-xl md:text-2xl font-light mb-8 max-w-3xl mx-auto">
-                Instituto Bíblico Único Caminho
-              </p>
-            </div>
-            
-            <p className="text-lg md:text-xl mb-12 max-w-4xl mx-auto leading-relaxed">
-              Formamos crianças e jovens nos caminhos do Senhor através do ensino bíblico de qualidade, 
-              desenvolvendo valores cristãos e preparando uma nova geração para servir a Deus.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-white text-red-600 hover:bg-gray-100">
-                <Link to="/cadastro-aluno">Cadastrar Aluno</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-red-600">
-                <Link to="/matricula">Fazer Matrícula</Link>
-              </Button>
-            </div>
+    <div className="min-h-screen bg-gradient-to-br from-purple-600 via-purple-500 to-pink-500 relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-4 h-4 bg-white bg-opacity-20 rounded-full animate-bounce"></div>
+        <div className="absolute top-40 right-20 w-6 h-6 bg-white bg-opacity-15 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-32 left-20 w-5 h-5 bg-white bg-opacity-25 rounded-full animate-ping"></div>
+        <div className="absolute bottom-20 right-10 w-3 h-3 bg-white bg-opacity-30 rounded-full animate-bounce delay-1000"></div>
+        <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-white bg-opacity-20 rounded-full animate-pulse delay-500"></div>
+        <div className="absolute top-1/3 right-1/3 w-4 h-4 bg-white bg-opacity-10 rounded-full animate-ping delay-700"></div>
+      </div>
+
+      {/* Animated Plus Signs */}
+      <div className="absolute top-32 right-32 text-white text-4xl font-bold opacity-30 animate-pulse">+</div>
+      <div className="absolute bottom-48 left-32 text-white text-6xl font-bold opacity-20 animate-bounce">+</div>
+      <div className="absolute top-1/2 right-16 text-white text-5xl font-bold opacity-25 animate-pulse delay-1000">+</div>
+
+      {/* Main Content */}
+      <div className="relative z-10 min-h-screen flex flex-col">
+        {/* Hero Section with Logo */}
+        <div className="flex-1 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 text-center">
+          <div className="mb-8 animate-fade-in">
+            <img
+              src="https://ibuc.com.br/wp-content/uploads/2023/05/logo-site.png"
+              alt="IBUC Logo"
+              className="h-16 w-auto mx-auto mb-4 animate-pulse"
+            />
           </div>
-        </div>
-      </section>
 
-      {/* Mission Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Nossa Missão
-          </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Proporcionar educação cristã de qualidade para crianças e jovens, fundamentada nos 
-            valores bíblicos, promovendo o desenvolvimento integral do ser humano e formando 
-            cidadãos comprometidos com os princípios do Reino de Deus.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <Card className="text-center hover:shadow-lg transition-shadow">
-            <Users className="h-12 w-12 text-red-600 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Ensino Personalizado</h3>
-            <p className="text-gray-600 text-sm">
-              Atendimento individualizado respeitando o ritmo de aprendizado de cada criança
-            </p>
-          </Card>
-
-          <Card className="text-center hover:shadow-lg transition-shadow">
-            <BookOpen className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Currículo Bíblico</h3>
-            <p className="text-gray-600 text-sm">
-              Material didático desenvolvido especialmente para o ensino infanto-juvenil
-            </p>
-          </Card>
-
-          <Card className="text-center hover:shadow-lg transition-shadow">
-            <MapPin className="h-12 w-12 text-green-600 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Múltiplos Polos</h3>
-            <p className="text-gray-600 text-sm">
-              Aulas em diversas congregações facilitando o acesso de todas as famílias
-            </p>
-          </Card>
-
-          <Card className="text-center hover:shadow-lg transition-shadow">
-            <Award className="h-12 w-12 text-yellow-600 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Certificação</h3>
-            <p className="text-gray-600 text-sm">
-              Formação reconhecida com certificado de conclusão ao final de cada nível
-            </p>
-          </Card>
-        </div>
-      </section>
-
-      {/* Levels Section */}
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Níveis de Ensino
+          {/* Inaugural Class Headline */}
+          <div className="mb-12 animate-slide-up">
+            <div className="inline-flex items-center bg-yellow-400 text-purple-900 px-6 py-3 rounded-full font-bold text-lg mb-6 animate-bounce">
+              <Calendar className="h-5 w-5 mr-2" />
+              22 DE AGOSTO
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-black text-white mb-4 drop-shadow-2xl animate-fade-in-up">
+              Aula Inaugural
+            </h1>
+            <h2 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-green-300 mb-6 animate-fade-in-up delay-200">
+              Geral!
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Oferecemos ensino bíblico estruturado por faixas etárias, 
-              adequado ao desenvolvimento cognitivo e espiritual de cada idade.
+            
+            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-white border-opacity-30 animate-fade-in-up delay-400">
+              <p className="text-xl md:text-2xl text-white font-semibold mb-2">
+                🎺 NO TEMPLO SEDE 🎺
+              </p>
+              <p className="text-lg text-white font-medium">
+                ASSEMBLEIA DE DEUS MISSÃO PROJETO RESTAURANDO VIDAS
+              </p>
+              <p className="text-md text-white opacity-90">
+                PR. SUIMAR CAETANO - PRESIDENTE
+              </p>
+            </div>
+          </div>
+
+          {/* Main Inaugural Image */}
+          <div className="mb-12 animate-scale-in">
+            <div className="relative max-w-md mx-auto">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F556e107f9581454d85126749671080db%2F3494e89c43fc4681b1f2fb736cf72a4e?format=webp&width=800"
+                alt="Aula Inaugural - Instituto Bíblico IBUC"
+                className="w-full h-auto rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500 border-4 border-white border-opacity-30"
+              />
+              
+              {/* Glowing effect around image */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-300 to-pink-300 rounded-3xl opacity-75 blur-lg animate-pulse"></div>
+              <div className="relative bg-white rounded-3xl"></div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="animate-fade-in-up delay-600">
+            <div className="mb-6">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                🌟 Não Perca Esta Oportunidade! 🌟
+              </h3>
+              <p className="text-lg text-white mb-6 max-w-2xl mx-auto opacity-90">
+                Garante já a sua vaga para participar desta experiência única de crescimento espiritual e conhecimento bíblico!
+              </p>
+            </div>
+            
+            <Button 
+              asChild 
+              size="lg" 
+              className="bg-gradient-to-r from-green-400 to-cyan-400 hover:from-green-500 hover:to-cyan-500 text-white font-bold text-xl px-12 py-4 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300 animate-pulse"
+            >
+              <Link to="/matricula" className="flex items-center">
+                <Users className="h-6 w-6 mr-3" />
+                FAZER MATRÍCULA AGORA!
+              </Link>
+            </Button>
+            
+            <p className="text-white text-sm mt-4 opacity-75 animate-pulse">
+              ✨ Vagas limitadas - Garante a sua hoje mesmo! ✨
             </p>
           </div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="bg-gradient-to-br from-red-50 to-red-100 border-red-200 hover:shadow-lg transition-shadow">
-              <div className="text-center">
-                <div className="bg-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-lg font-bold">
-                  I
-                </div>
-                <h3 className="text-xl font-bold text-red-800 mb-2">NÍVEL I</h3>
-                <p className="text-red-700 font-semibold mb-3">2 a 5 anos</p>
-                <p className="text-red-600 text-sm">
-                  Introdução aos valores cristãos através de histórias bíblicas e atividades lúdicas
-                </p>
+        {/* Additional Info Section */}
+        <div className="bg-white bg-opacity-10 backdrop-blur-sm py-8 mt-12">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div className="text-white">
+                <Calendar className="h-12 w-12 mx-auto mb-3 text-yellow-300" />
+                <h4 className="font-bold text-lg mb-2">Data Especial</h4>
+                <p>22 de Agosto - Uma data que ficará na história do IBUC</p>
               </div>
-            </Card>
-
-            <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 hover:shadow-lg transition-shadow">
-              <div className="text-center">
-                <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-lg font-bold">
-                  II
-                </div>
-                <h3 className="text-xl font-bold text-blue-800 mb-2">NÍVEL II</h3>
-                <p className="text-blue-700 font-semibold mb-3">6 a 8 anos</p>
-                <p className="text-blue-600 text-sm">
-                  Desenvolvimento da leitura bíblica e compreensão de princípios básicos da fé
-                </p>
+              
+              <div className="text-white">
+                <MapPin className="h-12 w-12 mx-auto mb-3 text-green-300" />
+                <h4 className="font-bold text-lg mb-2">Local Central</h4>
+                <p>Templo Sede - Fácil acesso para toda a família</p>
               </div>
-            </Card>
-
-            <Card className="bg-gradient-to-br from-green-50 to-green-100 border-green-200 hover:shadow-lg transition-shadow">
-              <div className="text-center">
-                <div className="bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-lg font-bold">
-                  III
-                </div>
-                <h3 className="text-xl font-bold text-green-800 mb-2">NÍVEL III</h3>
-                <p className="text-green-700 font-semibold mb-3">9 a 11 anos</p>
-                <p className="text-green-600 text-sm">
-                  Aprofundamento nos ensinamentos bíblicos e desenvolvimento do caráter cristão
-                </p>
+              
+              <div className="text-white">
+                <Users className="h-12 w-12 mx-auto mb-3 text-cyan-300" />
+                <h4 className="font-bold text-lg mb-2">Para Todos</h4>
+                <p>Crianças, jovens e toda a família são bem-vindos</p>
               </div>
-            </Card>
-
-            <Card className="bg-gradient-to-br from-yellow-50 to-yellow-100 border-yellow-200 hover:shadow-lg transition-shadow">
-              <div className="text-center">
-                <div className="bg-yellow-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-lg font-bold">
-                  IV
-                </div>
-                <h3 className="text-xl font-bold text-yellow-800 mb-2">NÍVEL IV</h3>
-                <p className="text-yellow-700 font-semibold mb-3">12 a 16 anos</p>
-                <p className="text-yellow-600 text-sm">
-                  Formação de líderes jovens com foco na evangelização e serviço cristão
-                </p>
-              </div>
-            </Card>
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* Access Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Acesso Rápido
-          </h2>
-          <p className="text-xl text-gray-600">
-            Escolha a opção adequada para acessar o sistema
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <Card className="text-center hover:shadow-lg transition-shadow">
-            <div className="mb-6">
-              <Users className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Área do Aluno</h3>
-              <p className="text-gray-600 mb-6">
-                Acesso para alunos e pais acompanharem o desenvolvimento escolar
-              </p>
-              <Button asChild variant="secondary" size="lg" className="w-full">
-                <Link to="/acesso-aluno">Acessar Área do Aluno</Link>
-              </Button>
+        {/* YouTube Video Section - Instructions */}
+        <div className="bg-black bg-opacity-30 py-8">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-6">
+              <Play className="h-12 w-12 mx-auto mb-4 text-red-400" />
+              <h3 className="text-xl font-bold text-white mb-4">
+                💡 Como Adicionar Vídeo do YouTube
+              </h3>
+              <div className="text-white text-sm space-y-2 text-left max-w-2xl mx-auto">
+                <p><strong>1. Obtenha o ID do vídeo:</strong> Na URL do YouTube (exemplo: youtube.com/watch?v=ABC123), copie "ABC123"</p>
+                <p><strong>2. Use o iframe:</strong> Substitua "VIDEO_ID" pelo ID copiado:</p>
+                <code className="block bg-black bg-opacity-30 p-3 rounded mt-2 text-xs">
+                  {`<iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/VIDEO_ID" 
+  title="YouTube video player" 
+  frameBorder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowFullScreen>
+</iframe>`}
+                </code>
+                <p><strong>3. Para responsivo:</strong> Envolva em uma div com classes Tailwind apropriadas</p>
+              </div>
             </div>
-          </Card>
-
-          <Card className="text-center hover:shadow-lg transition-shadow">
-            <div className="mb-6">
-              <Award className="h-16 w-16 text-red-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Área Administrativa</h3>
-              <p className="text-gray-600 mb-6">
-                Acesso restrito para coordenadores e administradores do sistema
-              </p>
-              <Button asChild size="lg" className="w-full">
-                <Link to="/admin">Acessar Área Admin</Link>
-              </Button>
-            </div>
-          </Card>
+          </div>
         </div>
-      </section>
+      </div>
+
+      {/* Custom Animations */}
+      <style jsx>{`
+        @keyframes fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        
+        @keyframes slide-up {
+          from { 
+            opacity: 0; 
+            transform: translateY(50px); 
+          }
+          to { 
+            opacity: 1; 
+            transform: translateY(0); 
+          }
+        }
+        
+        @keyframes fade-in-up {
+          from { 
+            opacity: 0; 
+            transform: translateY(30px); 
+          }
+          to { 
+            opacity: 1; 
+            transform: translateY(0); 
+          }
+        }
+        
+        @keyframes scale-in {
+          from { 
+            opacity: 0; 
+            transform: scale(0.8); 
+          }
+          to { 
+            opacity: 1; 
+            transform: scale(1); 
+          }
+        }
+        
+        .animate-fade-in {
+          animation: fade-in 1s ease-out;
+        }
+        
+        .animate-slide-up {
+          animation: slide-up 1s ease-out;
+        }
+        
+        .animate-fade-in-up {
+          animation: fade-in-up 1s ease-out;
+        }
+        
+        .animate-fade-in-up.delay-200 {
+          animation-delay: 0.2s;
+          animation-fill-mode: both;
+        }
+        
+        .animate-fade-in-up.delay-400 {
+          animation-delay: 0.4s;
+          animation-fill-mode: both;
+        }
+        
+        .animate-fade-in-up.delay-600 {
+          animation-delay: 0.6s;
+          animation-fill-mode: both;
+        }
+        
+        .animate-scale-in {
+          animation: scale-in 1.2s ease-out 0.3s both;
+        }
+      `}</style>
     </div>
   );
 };
