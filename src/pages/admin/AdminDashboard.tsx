@@ -50,25 +50,39 @@ const AdminDashboard: React.FC = () => {
 
   const quickActions = [
     {
-      title: 'Gerenciar Alunos',
-      description: 'Visualizar, editar e gerenciar dados dos alunos',
-      href: '/admin/students',
-      icon: Users,
+      title: 'Usuários Administrativos',
+      description: 'Coordenadores, diretores e acesso geral',
+      href: '/admin/users',
+      icon: Settings,
       color: 'bg-blue-600 hover:bg-blue-700'
+    },
+    {
+      title: 'Equipes dos Polos',
+      description: 'Professores, auxiliares, secretários e tesoureiros',
+      href: '/admin/staff',
+      icon: Users,
+      color: 'bg-green-600 hover:bg-green-700'
     },
     {
       title: 'Gerenciar Polos',
       description: 'Cadastrar e editar polos/congregações',
       href: '/admin/polos',
       icon: MapPin,
-      color: 'bg-green-600 hover:bg-green-700'
+      color: 'bg-purple-600 hover:bg-purple-700'
+    },
+    {
+      title: 'Gerenciar Alunos',
+      description: 'Visualizar, editar e gerenciar dados dos alunos',
+      href: '/admin/students',
+      icon: UserCheck,
+      color: 'bg-indigo-600 hover:bg-indigo-700'
     },
     {
       title: 'Matrículas',
       description: 'Acompanhar e gerenciar matrículas',
       href: '/admin/enrollments',
       icon: BookOpen,
-      color: 'bg-purple-600 hover:bg-purple-700'
+      color: 'bg-orange-600 hover:bg-orange-700'
     },
     {
       title: 'Relatórios',
