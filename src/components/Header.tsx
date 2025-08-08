@@ -10,7 +10,6 @@ const Header: React.FC = () => {
 
   const navItems = [
     { path: '/', label: 'Início' },
-    { path: '/cadastro-aluno', label: 'Cadastrar Aluno' },
     { path: '/matricula', label: 'Matrícula' },
     { path: '/acesso-aluno', label: 'Área do Aluno' },
     { path: '/admin', label: 'Área Administrativa' },
