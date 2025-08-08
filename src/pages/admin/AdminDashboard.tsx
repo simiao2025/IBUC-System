@@ -60,50 +60,59 @@ const AdminDashboard: React.FC = () => {
     }
   ];
 
-  const quickActions = [
+  const allQuickActions = [
     {
       title: 'Usuários Administrativos',
       description: 'Coordenadores, diretores e acesso geral',
       href: '/admin/users',
       icon: Settings,
-      color: 'bg-blue-600 hover:bg-blue-700'
+      color: 'bg-blue-600 hover:bg-blue-700',
+      permission: canManageUsers()
     },
     {
       title: 'Equipes dos Polos',
       description: 'Professores, auxiliares, secretários e tesoureiros',
       href: '/admin/staff',
       icon: Users,
-      color: 'bg-green-600 hover:bg-green-700'
+      color: 'bg-green-600 hover:bg-green-700',
+      permission: canManageStaff()
     },
     {
       title: 'Gerenciar Polos',
       description: 'Cadastrar e editar polos/congregações',
       href: '/admin/polos',
       icon: MapPin,
-      color: 'bg-purple-600 hover:bg-purple-700'
+      color: 'bg-purple-600 hover:bg-purple-700',
+      permission: canManagePolos()
     },
     {
       title: 'Gerenciar Alunos',
       description: 'Visualizar, editar e gerenciar dados dos alunos',
       href: '/admin/students',
       icon: UserCheck,
-      color: 'bg-indigo-600 hover:bg-indigo-700'
+      color: 'bg-indigo-600 hover:bg-indigo-700',
+      permission: true // Todos os admins podem gerenciar alunos
     },
     {
       title: 'Matrículas',
       description: 'Acompanhar e gerenciar matrículas',
       href: '/admin/enrollments',
       icon: BookOpen,
-      color: 'bg-orange-600 hover:bg-orange-700'
+      color: 'bg-orange-600 hover:bg-orange-700',
+      permission: canManageEnrollments()
     },
     {
       title: 'Relatórios',
       description: 'Gerar relatórios e estatísticas',
       href: '/admin/reports',
       icon: BarChart3,
-      color: 'bg-red-600 hover:bg-red-700'
+      color: 'bg-red-600 hover:bg-red-700',
+      permission: canViewReports()
     }
   ];
+
+  // Filtra ações baseado nas permissões
+  const quickActions = allQuickActions.filter(action => action.permission);
 
   return (
     <div className="min-h-screen bg-gray-50">
