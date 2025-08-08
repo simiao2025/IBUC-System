@@ -82,6 +82,26 @@ export const router = createBrowserRouter([
     ),
   },
   {
+    path: '/admin/users',
+    element: (
+      <Layout>
+        <ProtectedRoute adminOnly>
+          <UserManagement />
+        </ProtectedRoute>
+      </Layout>
+    ),
+  },
+  {
+    path: '/admin/staff',
+    element: (
+      <Layout>
+        <ProtectedRoute adminOnly>
+          <StaffManagement />
+        </ProtectedRoute>
+      </Layout>
+    ),
+  },
+  {
     path: '/admin/students',
     element: (
       <Layout>
