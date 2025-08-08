@@ -46,6 +46,7 @@ const EnrollmentPage: React.FC = () => {
     if (!formData.level) newErrors.level = 'Nível é obrigatório';
     if (!formData.polo) newErrors.polo = 'Polo é obrigatório';
     if (!formData.enrollmentDate) newErrors.enrollmentDate = 'Data de matrícula é obrigatória';
+    if (!agreementAccepted) newErrors.agreement = 'É necessário aceitar o termo de responsabilidade';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
