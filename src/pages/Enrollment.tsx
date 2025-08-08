@@ -299,12 +299,77 @@ const EnrollmentPage: React.FC = () => {
             </Card>
           )}
 
+          {/* Termo de Responsabilidade */}
+          <Card>
+            <div className="flex items-center space-x-2 mb-6">
+              <FileText className="h-6 w-6 text-red-600" />
+              <h2 className="text-xl font-semibold text-gray-900">Termo de Responsabilidade</h2>
+            </div>
+
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6 max-h-64 overflow-y-auto">
+              <div className="text-sm text-gray-700 space-y-4">
+                <h3 className="font-bold text-gray-900 mb-3">TERMO DE RESPONSABILIDADE - ESCOLA BÍBLICA DOMINICAL INFANTIL</h3>
+
+                <p><strong>1. COMPROMISSO DOS RESPONSÁVEIS:</strong></p>
+                <p>Como responsável legal pelo menor acima identificado, comprometo-me a:</p>
+                <ul className="list-disc list-inside ml-4 space-y-1">
+                  <li>Levar e buscar a criança nos horários estabelecidos pela instituição;</li>
+                  <li>Informar qualquer alteração de endereço, telefone ou dados pessoais;</li>
+                  <li>Comunicar previamente sobre faltas e ausências;</li>
+                  <li>Apoiar e reforçar em casa os ensinamentos ministrados na escola bíblica;</li>
+                  <li>Participar das reuniões e eventos quando solicitado.</li>
+                </ul>
+
+                <p><strong>2. AUTORIZAÇÃO MÉDICA:</strong></p>
+                <p>Autorizo a administração dos primeiros socorros em caso de acidentes e, se necessário, o encaminhamento para atendimento médico, responsabilizando-me pelos custos decorrentes.</p>
+
+                <p><strong>3. AUTORIZAÇÃO DE IMAGEM:</strong></p>
+                <p>Autorizo o uso da imagem da criança em atividades pedagógicas, fotografias e vídeos para fins educacionais e divulgação das atividades da igreja, sem finalidade comercial.</p>
+
+                <p><strong>4. DISCIPLINA E CONDUTA:</strong></p>
+                <p>Estou ciente das normas de conduta da instituição e comprometo-me a orientar a criança sobre a importância do respeito aos professores, colegas e patrimônio da igreja.</p>
+
+                <p><strong>5. RESPONSABILIDADE CIVIL:</strong></p>
+                <p>Responsabilizo-me por eventuais danos materiais causados pela criança às dependências ou patrimônio da instituição.</p>
+
+                <p><strong>6. FREQUÊNCIA:</strong></p>
+                <p>Comprometo-me a manter a frequência regular da criança, comunicando previamente sobre faltas previstas.</p>
+
+                <p className="font-bold text-gray-900 mt-4">Declaro ter lido e concordo com todos os termos acima descritos.</p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-3">
+              <input
+                type="checkbox"
+                id="agreement"
+                checked={agreementAccepted}
+                onChange={(e) => {
+                  setAgreementAccepted(e.target.checked);
+                  if (errors.agreement) {
+                    setErrors(prev => ({ ...prev, agreement: '' }));
+                  }
+                }}
+                className="mt-1 h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded"
+              />
+              <label htmlFor="agreement" className="text-sm text-gray-700">
+                <span className="font-medium">Li e aceito todos os termos do termo de responsabilidade</span> descrito acima.
+                Estou ciente de que este documento estabelece as condições para a matrícula e permanência da criança na Escola Bíblica Dominical Infantil da IBUC.
+              </label>
+            </div>
+
+            {errors.agreement && (
+              <p className="mt-2 text-sm text-red-600">{errors.agreement}</p>
+            )}
+          </Card>
+
           <div className="flex justify-center">
             <Button
               type="submit"
               size="lg"
               loading={loading}
-              className="min-w-[200px]"
+              disabled={!agreementAccepted || loading}
+              className={`min-w-[200px] ${!agreementAccepted ? 'opacity-50 cursor-not-allowed' : ''}`}
             >
               {loading ? 'Processando Matrícula...' : 'Finalizar Matrícula'}
             </Button>
