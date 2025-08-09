@@ -162,12 +162,14 @@ const AdminDashboard: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <Button variant="outline" size="sm">
-                <Settings className="h-4 w-4 mr-2" />
-                Configurações
+              <Button asChild variant="outline" size="sm">
+                <Link to="/admin/settings">
+                  <Settings className="h-4 w-4 mr-2" />
+                  Configurações
+                </Link>
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="sm"
                 onClick={logout}
               >
