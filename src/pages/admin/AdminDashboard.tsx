@@ -67,7 +67,7 @@ const AdminDashboard: React.FC = () => {
       href: '/admin/directorate',
       icon: Settings,
       color: 'bg-red-600 hover:bg-red-700',
-      permission: canManageUsers()
+      permission: true
     },
     {
       title: 'Gerenciar Polos',
@@ -75,7 +75,7 @@ const AdminDashboard: React.FC = () => {
       href: '/admin/enhanced-polos',
       icon: MapPin,
       color: 'bg-blue-600 hover:bg-blue-700',
-      permission: canManagePolos()
+      permission: true
     },
     {
       title: 'Usuários Administrativos',
@@ -83,7 +83,7 @@ const AdminDashboard: React.FC = () => {
       href: '/admin/users',
       icon: Users,
       color: 'bg-green-600 hover:bg-green-700',
-      permission: canManageUsers()
+      permission: true
     },
     {
       title: 'Equipes dos Polos',
@@ -91,7 +91,7 @@ const AdminDashboard: React.FC = () => {
       href: '/admin/staff',
       icon: UserCheck,
       color: 'bg-purple-600 hover:bg-purple-700',
-      permission: canManageStaff()
+      permission: true
     },
     {
       title: 'Configurações',
@@ -99,7 +99,7 @@ const AdminDashboard: React.FC = () => {
       href: '/admin/settings',
       icon: Settings,
       color: 'bg-indigo-600 hover:bg-indigo-700',
-      permission: canManageUsers()
+      permission: true
     },
     {
       title: 'Gerenciar Alunos',
@@ -107,7 +107,7 @@ const AdminDashboard: React.FC = () => {
       href: '/admin/students',
       icon: BookOpen,
       color: 'bg-orange-600 hover:bg-orange-700',
-      permission: true // Todos os admins podem gerenciar alunos
+      permission: true
     },
     {
       title: 'Matrículas',
@@ -115,7 +115,7 @@ const AdminDashboard: React.FC = () => {
       href: '/admin/enrollments',
       icon: BarChart3,
       color: 'bg-yellow-600 hover:bg-yellow-700',
-      permission: canManageEnrollments()
+      permission: true
     },
     {
       title: 'Relatórios',
@@ -123,7 +123,7 @@ const AdminDashboard: React.FC = () => {
       href: '/admin/reports',
       icon: BarChart3,
       color: 'bg-gray-600 hover:bg-gray-700',
-      permission: canViewReports()
+      permission: true
     }
   ];
 
