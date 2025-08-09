@@ -116,19 +116,43 @@ const Home: React.FC = () => {
               </p>
             </div>
 
-            <div className="relative aspect-video w-full max-w-4xl mx-auto">
+            <div className="relative aspect-video w-full max-w-4xl mx-auto bg-black rounded-lg overflow-hidden shadow-2xl border-4 border-white border-opacity-30">
               <iframe
-                className="absolute inset-0 w-full h-full rounded-lg shadow-2xl border-4 border-white border-opacity-30"
-                src="https://www.youtube.com/embed/N1YwNkO2kpY?enablejsapi=1&origin=https://b929d657ae1f49988610cbd97ba368e8-b3459b7be0544158b6a23c231.fly.dev&rel=0&modestbranding=1"
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/N1YwNkO2kpY?rel=0&modestbranding=1&fs=1&cc_load_policy=0&iv_load_policy=3&autohide=0&controls=1"
                 title="Instituto Bíblico IBUC - Vídeo Oficial"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                referrerPolicy="strict-origin-when-cross-origin">
+                loading="lazy">
               </iframe>
 
+              {/* Loading placeholder */}
+              <div className="absolute inset-0 bg-gray-900 flex items-center justify-center text-white text-lg">
+                <div className="text-center">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+                  <p>Carregando vídeo...</p>
+                </div>
+              </div>
+
               {/* Glowing effect around video */}
-              <div className="absolute -inset-2 bg-gradient-to-r from-red-300 to-yellow-300 rounded-lg opacity-50 blur-lg animate-pulse"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-red-300 to-yellow-300 rounded-lg opacity-50 blur-lg animate-pulse -z-10"></div>
+            </div>
+
+            {/* Alternative Link */}
+            <div className="mt-4 text-center">
+              <p className="text-white text-sm mb-2">Problemas para visualizar o vídeo?</p>
+              <a
+                href="https://www.youtube.com/watch?v=N1YwNkO2kpY"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-white bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition-colors"
+              >
+                <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                Assistir no YouTube
+              </a>
             </div>
           </div>
 
