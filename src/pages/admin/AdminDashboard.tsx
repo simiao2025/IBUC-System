@@ -28,6 +28,11 @@ const AdminDashboard: React.FC = () => {
     getFilteredPolos
   } = useAccessControl();
 
+  const { isDialogOpen, confirmNavigation, handleConfirm, handleCancel } = useNavigationConfirm({
+    title: 'Confirmar saída',
+    message: 'Você tem certeza que deseja sair do sistema?'
+  });
+
   // Filtra polos baseado no nível de acesso do usuário
   const accessiblePolos = getFilteredPolos(polos);
 
