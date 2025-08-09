@@ -346,26 +346,28 @@ const AboutIBUC: React.FC = () => {
       <section className="bg-gradient-to-br from-red-600 via-red-500 to-orange-500 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Faça Parte da Família IBUC
+            Venha Conhecer o IBUC
           </h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Venha conhecer de perto nosso trabalho e descubra como podemos contribuir 
-            para a formação bíblica e espiritual do seu filho ou filha.
+            Descubra mais sobre nosso curso de teologia infanto-juvenil e faça
+            parte desta jornada de formação bíblica e crescimento espiritual.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
+            <a
               href="/matricula"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-red-600 font-bold rounded-lg hover:bg-gray-100 transition-colors"
             >
               <Users className="h-6 w-6 mr-3" />
               Fazer Matrícula
             </a>
-            <a 
-              href="/contato"
+            <a
+              href="https://wa.me/556231236668"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-red-600 transition-colors"
             >
               <Phone className="h-6 w-6 mr-3" />
-              Entre em Contato
+              WhatsApp (62) 3123-6668
             </a>
           </div>
         </div>
