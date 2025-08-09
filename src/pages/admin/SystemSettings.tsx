@@ -472,7 +472,11 @@ const SystemSettings: React.FC = () => {
                     <div className="space-y-2">
                       {[
                         { id: 'sunday', label: 'Domingo' },
+                        { id: 'monday', label: 'Segunda-feira' },
+                        { id: 'tuesday', label: 'Terça-feira' },
                         { id: 'wednesday', label: 'Quarta-feira' },
+                        { id: 'thursday', label: 'Quinta-feira' },
+                        { id: 'friday', label: 'Sexta-feira' },
                         { id: 'saturday', label: 'Sábado' }
                       ].map(day => (
                         <label key={day.id} className="flex items-center">
