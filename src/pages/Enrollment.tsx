@@ -345,7 +345,7 @@ const EnrollmentPage: React.FC = () => {
                 <p>Autorizo o uso da imagem da criança em atividades pedagógicas, fotografias e vídeos para fins educacionais e divulgação das atividades da igreja, sem finalidade comercial.</p>
 
                 <p><strong>4. DISCIPLINA E CONDUTA:</strong></p>
-                <p>Estou ciente das normas de conduta da instituição e comprometo-me a orientar a criança sobre a import��ncia do respeito aos professores, colegas e patrimônio da igreja.</p>
+                <p>Estou ciente das normas de conduta da instituição e comprometo-me a orientar a criança sobre a importância do respeito aos professores, colegas e patrimônio da igreja.</p>
 
                 <p><strong>5. RESPONSABILIDADE CIVIL:</strong></p>
                 <p>Responsabilizo-me por eventuais danos materiais causados pela criança às dependências ou patrimônio da instituição.</p>
@@ -393,6 +393,16 @@ const EnrollmentPage: React.FC = () => {
             </Button>
           </div>
         </form>
+
+        <ConfirmDialog
+          isOpen={isDialogOpen}
+          title="Sair da matrícula"
+          message="Você tem certeza que deseja sair? Todos os dados preenchidos serão perdidos."
+          onConfirm={handleConfirm}
+          onCancel={handleCancel}
+          confirmText="Sim"
+          cancelText="Não"
+        />
       </div>
     </div>
   );
