@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
+import { useNavigationConfirm } from '../hooks/useNavigationConfirm';
 import Input from '../components/ui/Input';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
+import ConfirmDialog from '../components/ui/ConfirmDialog';
 import { User, Lock, BookOpen, Calendar, Award } from 'lucide-react';
 
 const StudentAccess: React.FC = () => {
