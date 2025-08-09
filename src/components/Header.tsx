@@ -35,19 +35,33 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-6">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  isActive(item.path)
-                    ? 'bg-red-100 text-red-700'
-                    : 'text-gray-700 hover:text-red-600 hover:bg-red-50'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const className = `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                isActive(item.path)
+                  ? 'bg-red-100 text-red-700'
+                  : 'text-gray-700 hover:text-red-600 hover:bg-red-50'
+              }`;
+
+              return item.needsConfirm ? (
+                <ConfirmLink
+                  key={item.path}
+                  to={item.path}
+                  className={className}
+                  message={`Você tem certeza que deseja navegar para ${item.label}?`}
+                  title="Confirmar navegação"
+                >
+                  {item.label}
+                </ConfirmLink>
+              ) : (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={className}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Mobile menu button */}
