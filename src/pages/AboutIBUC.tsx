@@ -138,7 +138,7 @@ const AboutIBUC: React.FC = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                 <Building className="h-6 w-6 text-red-600 mr-3" />
@@ -147,7 +147,7 @@ const AboutIBUC: React.FC = () => {
               <div className="space-y-4">
                 <div>
                   <p className="font-semibold text-gray-700">Razão Social:</p>
-                  <p className="text-gray-600">Instituto Bíblico Único Caminho</p>
+                  <p className="text-gray-600">Instituto Biblico Unico Caminho</p>
                 </div>
                 <div>
                   <p className="font-semibold text-gray-700">CNPJ:</p>
@@ -163,7 +163,7 @@ const AboutIBUC: React.FC = () => {
             <Card className="p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                 <Church className="h-6 w-6 text-blue-600 mr-3" />
-                Sede Principal
+                Igreja Sede
               </h3>
               <div className="space-y-4">
                 <div>
@@ -172,12 +172,32 @@ const AboutIBUC: React.FC = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-gray-700">Pastor Presidente:</p>
-                  <p className="text-gray-600">PR. Suimar Caetano</p>
+                  <p className="text-gray-600">PR. SUIMAR CAETANO</p>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-700">Local das Aulas Inaugurais:</p>
-                  <p className="text-gray-600">Templo Sede</p>
+                  <p className="font-semibold text-gray-700">Fundação:</p>
+                  <p className="text-gray-600">Palmas - TO</p>
                 </div>
+              </div>
+            </Card>
+
+            <Card className="p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <Download className="h-6 w-6 text-green-600 mr-3" />
+                Seja um Patrocinador
+              </h3>
+              <div className="space-y-4">
+                <p className="text-gray-600">
+                  Apoie nosso trabalho de formação bíblica e contribua para o
+                  desenvolvimento espiritual de crianças e jovens.
+                </p>
+                <a
+                  href="#"
+                  className="inline-flex items-center text-green-600 hover:text-green-700 font-semibold"
+                >
+                  <Heart className="h-4 w-4 mr-2" />
+                  Saiba como contribuir
+                </a>
               </div>
             </Card>
           </div>
