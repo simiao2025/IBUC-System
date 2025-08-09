@@ -256,6 +256,16 @@ const StudentAccess: React.FC = () => {
             Voltar ao início
           </button>
         </div>
+
+        <ConfirmDialog
+          isOpen={isDialogOpen}
+          title="Sair da área do aluno"
+          message="Você tem certeza que deseja voltar ao início?"
+          onConfirm={handleConfirm}
+          onCancel={handleCancel}
+          confirmText="Sim"
+          cancelText="Não"
+        />
       </div>
     </div>
   );
