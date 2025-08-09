@@ -13,7 +13,7 @@ import { BookOpen, MapPin, Calendar, FileText, CheckCircle, ArrowLeft } from 'lu
 const EnrollmentPage: React.FC = () => {
   const { currentStudent, polos, addEnrollment } = useApp();
   const navigate = useNavigate();
-  
+
   const [formData, setFormData] = useState({
     level: '',
     polo: '',
@@ -26,6 +26,11 @@ const EnrollmentPage: React.FC = () => {
   const [success, setSuccess] = useState(false);
   const [agreementAccepted, setAgreementAccepted] = useState(false);
   const [enrollmentNumber, setEnrollmentNumber] = useState('');
+
+  const { isDialogOpen, confirmNavigation, handleConfirm, handleCancel } = useNavigationConfirm({
+    title: 'Sair da matrícula',
+    message: 'Você tem certeza que deseja sair? Todos os dados preenchidos serão perdidos.'
+  });
 
   useEffect(() => {
     if (!currentStudent?.name) {
