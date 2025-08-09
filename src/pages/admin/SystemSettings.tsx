@@ -71,6 +71,11 @@ interface SystemConfig {
 
 const SystemSettings: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'users' | 'config' | 'security' | 'backup'>('users');
+
+  const { isDialogOpen, confirmNavigation, handleConfirm, handleCancel } = useNavigationConfirm({
+    title: 'Sair das configurações',
+    message: 'Você tem certeza que deseja sair? Alterações não salvas serão perdidas.'
+  });
   const [showUserForm, setShowUserForm] = useState(false);
   const [editingUser, setEditingUser] = useState<SystemUser | null>(null);
   const [showPassword, setShowPassword] = useState(false);
