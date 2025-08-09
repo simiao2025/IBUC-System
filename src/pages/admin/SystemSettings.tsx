@@ -124,6 +124,7 @@ const SystemSettings: React.FC = () => {
     notifications: {
       emailEnabled: true,
       smsEnabled: false,
+      whatsappEnabled: true,
       autoReminders: true
     },
     security: {
