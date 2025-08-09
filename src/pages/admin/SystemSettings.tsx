@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigationConfirm } from '../../hooks/useNavigationConfirm';
 import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
 import Input from '../../components/ui/Input';
 import Select from '../../components/ui/Select';
+import ConfirmDialog from '../../components/ui/ConfirmDialog';
 import {
   ArrowLeft,
   Settings,
