@@ -62,43 +62,59 @@ const AdminDashboard: React.FC = () => {
 
   const allQuickActions = [
     {
+      title: 'Diretoria Geral',
+      description: 'Cadastro da diretoria executiva do IBUC',
+      href: '/admin/directorate',
+      icon: Settings,
+      color: 'bg-red-600 hover:bg-red-700',
+      permission: canManageUsers()
+    },
+    {
+      title: 'Gerenciar Polos',
+      description: 'Cadastro completo de polos e congregações',
+      href: '/admin/enhanced-polos',
+      icon: MapPin,
+      color: 'bg-blue-600 hover:bg-blue-700',
+      permission: canManagePolos()
+    },
+    {
       title: 'Usuários Administrativos',
       description: 'Coordenadores, diretores e acesso geral',
       href: '/admin/users',
-      icon: Settings,
-      color: 'bg-blue-600 hover:bg-blue-700',
+      icon: Users,
+      color: 'bg-green-600 hover:bg-green-700',
       permission: canManageUsers()
     },
     {
       title: 'Equipes dos Polos',
       description: 'Professores, auxiliares, secretários e tesoureiros',
       href: '/admin/staff',
-      icon: Users,
-      color: 'bg-green-600 hover:bg-green-700',
+      icon: UserCheck,
+      color: 'bg-purple-600 hover:bg-purple-700',
       permission: canManageStaff()
     },
     {
-      title: 'Gerenciar Polos',
-      description: 'Cadastrar e editar polos/congregações',
-      href: '/admin/polos',
-      icon: MapPin,
-      color: 'bg-purple-600 hover:bg-purple-700',
-      permission: canManagePolos()
+      title: 'Configurações',
+      description: 'Usuários, acessos e configurações do sistema',
+      href: '/admin/settings',
+      icon: Settings,
+      color: 'bg-indigo-600 hover:bg-indigo-700',
+      permission: canManageUsers()
     },
     {
       title: 'Gerenciar Alunos',
       description: 'Visualizar, editar e gerenciar dados dos alunos',
       href: '/admin/students',
-      icon: UserCheck,
-      color: 'bg-indigo-600 hover:bg-indigo-700',
+      icon: BookOpen,
+      color: 'bg-orange-600 hover:bg-orange-700',
       permission: true // Todos os admins podem gerenciar alunos
     },
     {
       title: 'Matrículas',
       description: 'Acompanhar e gerenciar matrículas',
       href: '/admin/enrollments',
-      icon: BookOpen,
-      color: 'bg-orange-600 hover:bg-orange-700',
+      icon: BarChart3,
+      color: 'bg-yellow-600 hover:bg-yellow-700',
       permission: canManageEnrollments()
     },
     {
@@ -106,7 +122,7 @@ const AdminDashboard: React.FC = () => {
       description: 'Gerar relatórios e estatísticas',
       href: '/admin/reports',
       icon: BarChart3,
-      color: 'bg-red-600 hover:bg-red-700',
+      color: 'bg-gray-600 hover:bg-gray-700',
       permission: canViewReports()
     }
   ];
