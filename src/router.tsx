@@ -7,6 +7,7 @@ import StudentRegistration from './pages/StudentRegistration';
 import Enrollment from './pages/Enrollment';
 import StudentAccess from './pages/StudentAccess';
 import AdminAccess from './pages/AdminAccess';
+import AboutIBUC from './pages/AboutIBUC';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import PoloManagement from './pages/admin/PoloManagement';
 import UserManagement from './pages/admin/UserManagement';
