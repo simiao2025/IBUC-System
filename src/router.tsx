@@ -105,6 +105,36 @@ export const router = createBrowserRouter([
     ),
   },
   {
+    path: '/admin/directorate',
+    element: (
+      <Layout>
+        <ProtectedRoute adminOnly>
+          <DirectorateManagement />
+        </ProtectedRoute>
+      </Layout>
+    ),
+  },
+  {
+    path: '/admin/enhanced-polos',
+    element: (
+      <Layout>
+        <ProtectedRoute adminOnly>
+          <EnhancedPoloManagement />
+        </ProtectedRoute>
+      </Layout>
+    ),
+  },
+  {
+    path: '/admin/settings',
+    element: (
+      <Layout>
+        <ProtectedRoute adminOnly>
+          <SystemSettings />
+        </ProtectedRoute>
+      </Layout>
+    ),
+  },
+  {
     path: '/admin/students',
     element: (
       <Layout>
