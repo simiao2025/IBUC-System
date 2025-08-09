@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
 import Input from '../../components/ui/Input';
 import Select from '../../components/ui/Select';
-import { 
-  Plus, 
-  Search, 
-  Edit2, 
-  Trash2, 
-  Users, 
+import {
+  ArrowLeft,
+  Plus,
+  Search,
+  Edit2,
+  Trash2,
+  Users,
   MapPin,
   Calendar,
   GraduationCap,
