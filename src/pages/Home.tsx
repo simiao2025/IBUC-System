@@ -119,11 +119,12 @@ const Home: React.FC = () => {
             <div className="relative aspect-video w-full max-w-4xl mx-auto">
               <iframe
                 className="absolute inset-0 w-full h-full rounded-lg shadow-2xl border-4 border-white border-opacity-30"
-                src="https://www.youtube.com/embed/N1YwNkO2kpY"
-                title="YouTube video player"
+                src="https://www.youtube.com/embed/N1YwNkO2kpY?enablejsapi=1&origin=https://b929d657ae1f49988610cbd97ba368e8-b3459b7be0544158b6a23c231.fly.dev&rel=0&modestbranding=1"
+                title="Instituto Bíblico IBUC - Vídeo Oficial"
                 frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen>
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin">
               </iframe>
 
               {/* Glowing effect around video */}
