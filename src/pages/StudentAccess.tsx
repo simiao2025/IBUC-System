@@ -249,12 +249,12 @@ const StudentAccess: React.FC = () => {
         </Card>
 
         <div className="text-center">
-          <Link
-            to="/"
+          <button
+            onClick={() => confirmNavigation(() => navigate('/'))}
             className="text-sm text-gray-500 hover:text-gray-700"
           >
             Voltar ao início
-          </Link>
+          </button>
         </div>
       </div>
     </div>
