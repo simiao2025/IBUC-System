@@ -293,6 +293,16 @@ const AdminDashboard: React.FC = () => {
           </Card>
         </div>
       </div>
+
+      <ConfirmDialog
+        isOpen={isDialogOpen}
+        title="Confirmar saída"
+        message="Você tem certeza que deseja sair do sistema?"
+        onConfirm={handleConfirm}
+        onCancel={handleCancel}
+        confirmText="Sim"
+        cancelText="Não"
+      />
     </div>
   );
 };
