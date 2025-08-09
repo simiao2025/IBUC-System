@@ -50,6 +50,10 @@ export const router = createBrowserRouter([
     element: <Layout><Enrollment /></Layout>,
   },
   {
+    path: '/conheca-o-ibuc',
+    element: <Layout><AboutIBUC /></Layout>,
+  },
+  {
     path: '/acesso-aluno',
     element: <Layout><StudentAccess /></Layout>,
   },
