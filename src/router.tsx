@@ -14,6 +14,7 @@ import StaffManagement from './pages/admin/StaffManagement';
 import DirectorateManagement from './pages/admin/DirectorateManagement';
 import EnhancedPoloManagement from './pages/admin/EnhancedPoloManagement';
 import SystemSettings from './pages/admin/SystemSettings';
+import EducationalReports from './pages/admin/EducationalReports';
 
 // Protected Route Component
 const ProtectedRoute: React.FC<{ children: React.ReactNode; adminOnly?: boolean }> = ({ 
