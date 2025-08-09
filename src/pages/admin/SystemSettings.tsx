@@ -821,6 +821,16 @@ const SystemSettings: React.FC = () => {
           </Card>
         </div>
       )}
+
+      <ConfirmDialog
+        isOpen={isDialogOpen}
+        title="Sair das configurações"
+        message="Você tem certeza que deseja sair? Alterações não salvas serão perdidas."
+        onConfirm={handleConfirm}
+        onCancel={handleCancel}
+        confirmText="Sim"
+        cancelText="Não"
+      />
     </div>
   );
 };
