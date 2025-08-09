@@ -151,6 +151,17 @@ const EnrollmentPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-6">
+          <Button
+            variant="outline"
+            onClick={() => confirmNavigation(() => navigate('/'))}
+            className="mb-4"
+          >
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Voltar ao Início
+          </Button>
+        </div>
+
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Matrícula do Aluno
@@ -334,7 +345,7 @@ const EnrollmentPage: React.FC = () => {
                 <p>Autorizo o uso da imagem da criança em atividades pedagógicas, fotografias e vídeos para fins educacionais e divulgação das atividades da igreja, sem finalidade comercial.</p>
 
                 <p><strong>4. DISCIPLINA E CONDUTA:</strong></p>
-                <p>Estou ciente das normas de conduta da instituição e comprometo-me a orientar a criança sobre a importância do respeito aos professores, colegas e patrimônio da igreja.</p>
+                <p>Estou ciente das normas de conduta da instituição e comprometo-me a orientar a criança sobre a import��ncia do respeito aos professores, colegas e patrimônio da igreja.</p>
 
                 <p><strong>5. RESPONSABILIDADE CIVIL:</strong></p>
                 <p>Responsabilizo-me por eventuais danos materiais causados pela criança às dependências ou patrimônio da instituição.</p>
