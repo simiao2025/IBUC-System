@@ -40,49 +40,55 @@ const AboutIBUC: React.FC = () => {
         </div>
       </section>
 
-      {/* Sobre o Instituto */}
+      {/* Material do Curso */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Sobre o Instituto
+            Material do Curso
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            O IBUC - Instituto Bíblico Único Caminho é uma instituição de ensino dedicada à 
-            formação bíblica e teológica de crianças e jovens, fundamentada nos valores cristãos 
-            e comprometida com a excelência educacional.
+            Nosso material didático foi cuidadosamente desenvolvido para proporcionar
+            uma formação bíblica sólida e apropriada para cada faixa etária.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <Card className="text-center p-8">
-            <Target className="h-16 w-16 text-red-600 mx-auto mb-6" />
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Missão</h3>
-            <p className="text-gray-600">
-              Proporcionar educação cristã de qualidade para crianças e jovens, 
-              fundamentada nos valores bíblicos e formando cidadãos comprometidos 
-              com os princípios do Reino de Deus.
-            </p>
-          </Card>
+        {/* Imagens do Material */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="text-center">
+            <img
+              src="https://ibuc.com.br/wp-content/uploads/2025/03/o-curso-de-Website-2-1024x702.png"
+              alt="O Curso de Teologia Infanto-juvenil"
+              className="w-full rounded-lg shadow-lg"
+            />
+            <h3 className="text-xl font-bold text-gray-900 mt-4">O Curso</h3>
+          </div>
 
-          <Card className="text-center p-8">
-            <Eye className="h-16 w-16 text-blue-600 mx-auto mb-6" />
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Visão</h3>
-            <p className="text-gray-600">
-              Ser referência em ensino bíblico infanto-juvenil, formando uma 
-              geração de jovens cristãos preparados para servir a Deus e 
-              transformar a sociedade.
-            </p>
-          </Card>
+          <div className="text-center">
+            <img
+              src="https://ibuc.com.br/wp-content/uploads/2025/03/4-Niveis-1024x702.png"
+              alt="4 Níveis de Ensino"
+              className="w-full rounded-lg shadow-lg"
+            />
+            <h3 className="text-xl font-bold text-gray-900 mt-4">4 Níveis</h3>
+          </div>
 
-          <Card className="text-center p-8">
-            <Heart className="h-16 w-16 text-green-600 mx-auto mb-6" />
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Valores</h3>
-            <p className="text-gray-600">
-              Fé, amor, integridade, excelência, compromisso social e 
-              desenvolvimento integral do ser humano baseado nos ensinamentos 
-              bíblicos cristãos.
-            </p>
-          </Card>
+          <div className="text-center">
+            <img
+              src="https://ibuc.com.br/wp-content/uploads/2025/03/10-modulos-1024x702.png"
+              alt="10 Módulos"
+              className="w-full rounded-lg shadow-lg"
+            />
+            <h3 className="text-xl font-bold text-gray-900 mt-4">10 Módulos</h3>
+          </div>
+
+          <div className="text-center">
+            <img
+              src="https://ibuc.com.br/wp-content/uploads/2025/03/Manual-de-orientacao-1024x702.png"
+              alt="Manual de Orientação"
+              className="w-full rounded-lg shadow-lg"
+            />
+            <h3 className="text-xl font-bold text-gray-900 mt-4">Manual de Orientação</h3>
+          </div>
         </div>
       </section>
 
