@@ -178,7 +178,7 @@ const AdminDashboard: React.FC = () => {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={logout}
+                onClick={() => confirmNavigation(logout)}
               >
                 Sair
               </Button>
