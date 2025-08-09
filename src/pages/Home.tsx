@@ -105,6 +105,32 @@ const Home: React.FC = () => {
             </div>
           </div>
 
+          {/* YouTube Video Section */}
+          <div className="mb-12 animate-fade-in-up delay-500">
+            <div className="mb-6 text-center">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                🎥 Assista ao Vídeo Oficial! 🎥
+              </h3>
+              <p className="text-lg text-white opacity-90">
+                Conheça mais sobre o Instituto Bíblico IBUC
+              </p>
+            </div>
+
+            <div className="relative aspect-video w-full max-w-4xl mx-auto">
+              <iframe
+                className="absolute inset-0 w-full h-full rounded-lg shadow-2xl border-4 border-white border-opacity-30"
+                src="https://www.youtube.com/embed/N1YwNkO2kpY"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen>
+              </iframe>
+
+              {/* Glowing effect around video */}
+              <div className="absolute -inset-2 bg-gradient-to-r from-red-300 to-yellow-300 rounded-lg opacity-50 blur-lg animate-pulse"></div>
+            </div>
+          </div>
+
           {/* Call to Action */}
           <div className="animate-fade-in-up delay-600">
             <div className="mb-6">
