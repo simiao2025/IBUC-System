@@ -108,7 +108,7 @@ const EducationalReports: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card>
-          <h3 className="text-lg font-semibold mb-4">Matrículas por Nível</h3>
+          <h3 className="text-lg font-semibold mb-4">Matr��culas por Nível</h3>
           <div className="space-y-3">
             {mockData.enrollment.byLevel.map((level, index) => (
               <div key={index} className="flex items-center justify-between">
@@ -161,7 +161,7 @@ const EducationalReports: React.FC = () => {
         <Card className="text-center bg-blue-50 border-blue-200">
           <Users className="h-8 w-8 text-blue-600 mx-auto mb-2" />
           <h3 className="text-3xl font-bold text-blue-900">214</h3>
-          <p className="text-blue-700">Alunos Frequentes (>80%)</p>
+          <p className="text-blue-700">Alunos Frequentes (&gt;80%)</p>
         </Card>
       </div>
 
