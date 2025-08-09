@@ -139,9 +139,17 @@ const DirectorateManagement: React.FC = () => {
       <div className="bg-white shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">Diretoria Geral</h1>
-              <p className="text-sm text-gray-600">Cadastro e gestão da diretoria executiva do IBUC</p>
+            <div className="flex items-center space-x-4">
+              <Button asChild variant="outline" size="sm">
+                <Link to="/admin/dashboard">
+                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  Voltar
+                </Link>
+              </Button>
+              <div>
+                <h1 className="text-2xl font-bold text-gray-900">Diretoria Geral</h1>
+                <p className="text-sm text-gray-600">Cadastro e gestão da diretoria executiva do IBUC</p>
+              </div>
             </div>
             <Button onClick={() => setShowForm(true)}>
               <Crown className="h-4 w-4 mr-2" />
