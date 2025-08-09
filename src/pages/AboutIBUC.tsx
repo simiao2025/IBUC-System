@@ -1,22 +1,20 @@
 import React from 'react';
 import Card from '../components/ui/Card';
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  Users, 
-  BookOpen, 
-  Award, 
-  Building, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Users,
+  BookOpen,
+  Award,
+  Building,
   Heart,
   Target,
   Eye,
-  Star,
   Calendar,
-  GraduationCap,
   Church,
-  User
+  Download,
+  Star
 } from 'lucide-react';
 
 const AboutIBUC: React.FC = () => {
@@ -27,16 +25,16 @@ const AboutIBUC: React.FC = () => {
         <div className="absolute inset-0 bg-black opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center">
-            <img 
-              src="https://ibuc.com.br/wp-content/uploads/2023/05/logo-site.png" 
-              alt="IBUC Logo" 
+            <img
+              src="https://ibuc.com.br/wp-content/uploads/2023/05/logo-site.png"
+              alt="IBUC Logo"
               className="h-24 w-auto mx-auto mb-8"
             />
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Conheça o IBUC
+              Material - IBUC
             </h1>
             <p className="text-xl md:text-2xl font-light mb-8 max-w-4xl mx-auto">
-              Instituto Bíblico Único Caminho - Curso de Teologia Infanto-juvenil
+              Curso de Teologia Infanto-juvenil
             </p>
           </div>
         </div>
@@ -60,7 +58,7 @@ const AboutIBUC: React.FC = () => {
             <Target className="h-16 w-16 text-red-600 mx-auto mb-6" />
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Missão</h3>
             <p className="text-gray-600">
-              Proporcionar educação cristã de qualidade para crian��as e jovens, 
+              Proporcionar educação cristã de qualidade para crianças e jovens, 
               fundamentada nos valores bíblicos e formando cidadãos comprometidos 
               com os princípios do Reino de Deus.
             </p>
