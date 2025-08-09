@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
 import Input from '../../components/ui/Input';
 import Select from '../../components/ui/Select';
-import { 
-  BarChart3, 
-  Download, 
-  Calendar, 
-  Users, 
+import {
+  ArrowLeft,
+  BarChart3,
+  Download,
+  Calendar,
+  Users,
   TrendingUp,
   Award,
   Clock,
@@ -108,7 +110,7 @@ const EducationalReports: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card>
-          <h3 className="text-lg font-semibold mb-4">Matr��culas por Nível</h3>
+          <h3 className="text-lg font-semibold mb-4">Matrículas por Nível</h3>
           <div className="space-y-3">
             {mockData.enrollment.byLevel.map((level, index) => (
               <div key={index} className="flex items-center justify-between">
