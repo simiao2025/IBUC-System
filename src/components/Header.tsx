@@ -11,6 +11,7 @@ const Header: React.FC = () => {
 
   const navItems = [
     { path: '/', label: 'Início', needsConfirm: true },
+    { path: '/conheca-o-ibuc', label: 'Conheça o IBUC', needsConfirm: true },
     { path: '/matricula', label: 'Matrícula', needsConfirm: true },
     { path: '/acesso-aluno', label: 'Área do Aluno', needsConfirm: true },
     { path: '/admin', label: 'Área Administrativa', needsConfirm: false },
