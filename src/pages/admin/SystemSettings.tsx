@@ -517,6 +517,7 @@ const SystemSettings: React.FC = () => {
                   {[
                     { key: 'emailEnabled', label: 'Notificações por Email' },
                     { key: 'smsEnabled', label: 'Notificações por SMS' },
+                    { key: 'whatsappEnabled', label: 'Notificações por WhatsApp' },
                     { key: 'autoReminders', label: 'Lembretes Automáticos' }
                   ].map(({ key, label }) => (
                     <label key={key} className="flex items-center">
