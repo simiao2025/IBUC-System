@@ -50,6 +50,7 @@ interface SystemConfig {
   notifications: {
     emailEnabled: boolean;
     smsEnabled: boolean;
+    whatsappEnabled: boolean;
     autoReminders: boolean;
   };
   security: {
