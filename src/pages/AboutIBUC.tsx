@@ -204,15 +204,15 @@ const AboutIBUC: React.FC = () => {
         </div>
       </section>
 
-      {/* Contato */}
+      {/* Contato e Redes Sociais */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Entre em Contato
+              Redes Sociais
             </h2>
             <p className="text-xl text-gray-600">
-              Estamos sempre disponíveis para esclarecer suas dúvidas
+              Conecte-se conosco e acompanhe todas as novidades do IBUC
             </p>
           </div>
 
@@ -228,7 +228,7 @@ const AboutIBUC: React.FC = () => {
                     <p className="font-semibold text-gray-700">Endereço:</p>
                     <p className="text-gray-600">
                       Av. T9, nº647, Setor Bueno<br />
-                      Primeiro andar (acima da Copyprint)<br />
+                      primeiro andar (acima da Copyprint)<br />
                       Palmas - TO
                     </p>
                   </div>
@@ -254,56 +254,88 @@ const AboutIBUC: React.FC = () => {
 
             <Card className="p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Redes Sociais
+                Acompanhe-nos
               </h3>
-              <div className="space-y-4">
-                <a 
-                  href="https://web.facebook.com/IBUC.com.br" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 text-gray-600 hover:text-blue-600 transition-colors"
-                >
-                  <div className="bg-blue-600 text-white p-2 rounded-full">
-                    <span className="text-sm font-bold">f</span>
+              <div className="space-y-6">
+                <div className="flex items-center space-x-4">
+                  <div className="bg-blue-600 text-white p-3 rounded-full">
+                    <span className="text-lg font-bold">f</span>
                   </div>
-                  <span>Facebook - IBUC - Instituto Bíblico Único Caminho</span>
-                </a>
-
-                <a 
-                  href="https://www.instagram.com/ibuc_oficial/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 text-gray-600 hover:text-pink-600 transition-colors"
-                >
-                  <div className="bg-pink-600 text-white p-2 rounded-full">
-                    <span className="text-sm font-bold">@</span>
+                  <div>
+                    <a
+                      href="https://facebook.com/IBUC.com.br"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-700 font-semibold"
+                    >
+                      IBUC – Instituto Bíblico Único Caminho
+                    </a>
                   </div>
-                  <span>Instagram - @ibuc_oficial</span>
-                </a>
+                </div>
 
-                <a 
-                  href="https://www.youtube.com/@IBUConline" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 text-gray-600 hover:text-red-600 transition-colors"
-                >
-                  <div className="bg-red-600 text-white p-2 rounded-full">
-                    <span className="text-sm font-bold">▶</span>
-                  </div>
-                  <span>YouTube - IBUConline</span>
-                </a>
-
-                <a 
-                  href="https://wa.me/556231236668" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 text-gray-600 hover:text-green-600 transition-colors"
-                >
-                  <div className="bg-green-600 text-white p-2 rounded-full">
+                <div className="flex items-center space-x-4">
+                  <div className="bg-green-600 text-white p-3 rounded-full">
                     <span className="text-sm font-bold">W</span>
                   </div>
-                  <span>WhatsApp - (62) 3123-6668</span>
-                </a>
+                  <div>
+                    <a
+                      href="https://wa.me/556231236668"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-green-600 hover:text-green-700 font-semibold"
+                    >
+                      (62) 3123-6668 (whatsapp)
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="bg-pink-600 text-white p-3 rounded-full">
+                    <span className="text-sm font-bold">@</span>
+                  </div>
+                  <div>
+                    <a
+                      href="https://www.instagram.com/ibuc_oficial/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-pink-600 hover:text-pink-700 font-semibold"
+                    >
+                      @ibuc_oficial
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="bg-red-600 text-white p-3 rounded-full">
+                    <span className="text-sm font-bold">▶</span>
+                  </div>
+                  <div>
+                    <a
+                      href="https://www.youtube.com/@IBUConline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-red-600 hover:text-red-700 font-semibold"
+                    >
+                      YouTube - IBUConline
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="bg-red-800 text-white p-3 rounded-full">
+                    <MapPin className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <a
+                      href="https://goo.gl/maps/MJJFR66pPejFnKNQ8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-red-800 hover:text-red-900 font-semibold"
+                    >
+                      Ver no Google Maps
+                    </a>
+                  </div>
+                </div>
               </div>
             </Card>
           </div>
