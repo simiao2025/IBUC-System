@@ -11,6 +11,11 @@ import { User, Lock, BookOpen, Calendar, Award } from 'lucide-react';
 const StudentAccess: React.FC = () => {
   const { login, currentUser } = useApp();
   const navigate = useNavigate();
+
+  const { isDialogOpen, confirmNavigation, handleConfirm, handleCancel } = useNavigationConfirm({
+    title: 'Sair da área do aluno',
+    message: 'Você tem certeza que deseja voltar ao início?'
+  });
   const [formData, setFormData] = useState({
     cpf: '',
     password: '',
