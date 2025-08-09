@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 import { useAccessControl } from '../../components/AccessControl';
+import { useNavigationConfirm } from '../../hooks/useNavigationConfirm';
 import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
+import ConfirmDialog from '../../components/ui/ConfirmDialog';
 import {
   Users,
   MapPin,
