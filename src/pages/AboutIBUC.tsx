@@ -92,50 +92,39 @@ const AboutIBUC: React.FC = () => {
         </div>
       </section>
 
-      {/* Estrutura do Curso */}
+      {/* Módulos do Curso */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Estrutura do Curso
+              Módulos
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Nosso curso é cuidadosamente estruturado para oferecer uma formação 
-              completa e progressiva em teologia infanto-juvenil.
+              O curso é composto por 10 módulos estruturados sequencialmente
+              para um aprendizado progressivo e efetivo.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center p-8 bg-gradient-to-br from-red-50 to-red-100 border-red-200">
-              <div className="bg-red-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
-                4
-              </div>
-              <h3 className="text-2xl font-bold text-red-800 mb-4">Níveis</h3>
-              <p className="text-red-700">
-                Quatro níveis de ensino organizados por faixas etárias, 
-                desde 2 até 16 anos de idade.
-              </p>
-            </Card>
-
-            <Card className="text-center p-8 bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
-              <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
-                10
-              </div>
-              <h3 className="text-2xl font-bold text-blue-800 mb-4">Módulos</h3>
-              <p className="text-blue-700">
-                Dez módulos cuidadosamente desenvolvidos com conteúdo 
-                bíblico e atividades práticas.
-              </p>
-            </Card>
-
-            <Card className="text-center p-8 bg-gradient-to-br from-green-50 to-green-100 border-green-200">
-              <BookOpen className="h-16 w-16 text-green-600 mx-auto mb-6" />
-              <h3 className="text-2xl font-bold text-green-800 mb-4">Material</h3>
-              <p className="text-green-700">
-                Manual de orientação completo e material didático 
-                especializado para cada faixa etária.
-              </p>
-            </Card>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {[
+              { number: '01', title: 'Módulo 01' },
+              { number: '02', title: 'Módulo 02' },
+              { number: '03', title: 'Módulo 03' },
+              { number: '04', title: 'Módulo 04' },
+              { number: '05', title: 'Módulo 05' },
+              { number: '06', title: 'Módulo 06' },
+              { number: '07', title: 'Módulo 07' },
+              { number: '08', title: 'Módulo 08' },
+              { number: '09', title: 'Módulo 09' },
+              { number: '10', title: 'Módulo 10' }
+            ].map((module) => (
+              <Card key={module.number} className="text-center p-6 hover:shadow-lg transition-shadow bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
+                <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-lg font-bold">
+                  {module.number}
+                </div>
+                <h3 className="text-lg font-bold text-blue-800">{module.title}</h3>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
