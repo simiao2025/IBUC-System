@@ -26,7 +26,8 @@ import {
   Clock,
   GraduationCap
 } from 'lucide-react';
-import type { StudentData, Level, LEVELS } from '../../types';
+import type { StudentData, Level } from '../../types';
+import { LEVELS } from '../../types';
 
 const StudentManagement: React.FC = () => {
   const { students, addStudent, polos } = useApp();
