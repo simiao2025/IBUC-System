@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { LEVELS, Level, Enrollment } from '../types';
+import { useNavigationConfirm } from '../hooks/useNavigationConfirm';
 import Input from '../components/ui/Input';
 import Select from '../components/ui/Select';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
-import { BookOpen, MapPin, Calendar, FileText, CheckCircle } from 'lucide-react';
+import ConfirmDialog from '../components/ui/ConfirmDialog';
+import { BookOpen, MapPin, Calendar, FileText, CheckCircle, ArrowLeft } from 'lucide-react';
 
 const EnrollmentPage: React.FC = () => {
   const { currentStudent, polos, addEnrollment } = useApp();
