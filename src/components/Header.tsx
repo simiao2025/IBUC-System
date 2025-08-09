@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import ConfirmLink from './ui/ConfirmLink';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -9,10 +10,10 @@ const Header: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const navItems = [
-    { path: '/', label: 'Início' },
-    { path: '/matricula', label: 'Matrícula' },
-    { path: '/acesso-aluno', label: 'Área do Aluno' },
-    { path: '/admin', label: 'Área Administrativa' },
+    { path: '/', label: 'Início', needsConfirm: true },
+    { path: '/matricula', label: 'Matrícula', needsConfirm: true },
+    { path: '/acesso-aluno', label: 'Área do Aluno', needsConfirm: true },
+    { path: '/admin', label: 'Área Administrativa', needsConfirm: false },
   ];
 
   return (
