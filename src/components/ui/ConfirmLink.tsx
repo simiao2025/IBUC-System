@@ -32,12 +32,21 @@ const ConfirmLink: React.FC<ConfirmLinkProps> = ({
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    confirmNavigation(() => {
+    try {
+      confirmNavigation(() => {
+        if (onClick) {
+          onClick();
+        }
+        navigate(to);
+      });
+    } catch (error) {
+      console.error('Erro na navegação com confirmação:', error);
+      // Fallback: navegar diretamente em caso de erro
       if (onClick) {
         onClick();
       }
       navigate(to);
-    });
+    }
   };
 
   return (
