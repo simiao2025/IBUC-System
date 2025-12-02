@@ -1,13 +1,13 @@
 import React from 'react';
 import { RouterProvider } from 'react-router-dom';
-import { AppProvider } from './context/AppContext';
+import { SupabaseProvider } from './context/SupabaseContext';
 import { router } from './router';
 
 function App() {
   return (
-    <AppProvider>
+    <SupabaseProvider>
       <RouterProvider router={router} />
-    </AppProvider>
+    </SupabaseProvider>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useApp } from '../context/AppContext';
+import { useSupabase } from '../context/SupabaseContext';
 import { Shield, Lock } from 'lucide-react';
 import Card from './ui/Card';
 import type { AdminRole, AccessLevel } from '../types';
@@ -19,7 +19,7 @@ const AccessControl: React.FC<AccessControlProps> = ({
   allowedRoles,
   fallbackMessage
 }) => {
-  const { currentUser, hasAccessToAllPolos, hasAccessToPolo } = useApp();
+  const { currentUser, hasAccessToAllPolos, hasAccessToPolo } = useSupabase();
 
   // Se não é admin, nega acesso
   if (!currentUser || currentUser.role !== 'admin') {

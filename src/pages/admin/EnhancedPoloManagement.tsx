@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useApp } from '../../context/AppContext';
+import { useSupabase } from '../../context/SupabaseContext';
 import { Level, LEVELS } from '../../types';
 import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';

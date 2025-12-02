@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useApp } from '../context/AppContext';
+import { useSupabase } from '../context/SupabaseContext';
 import { useNavigationConfirm } from '../hooks/useNavigationConfirm';
 import { StudentData } from '../types';
 import Input from '../components/ui/Input';
@@ -12,7 +12,7 @@ import { User, Users, MapPin, Phone, Mail } from 'lucide-react';
 
 const StudentRegistration: React.FC = () => {
   const navigate = useNavigate();
-  const { addStudent, hasUnsavedChanges, setHasUnsavedChanges } = useApp();
+  const { addStudent } = useSupabase();
   const [formData, setFormData] = useState({
     // Student data
     name: '',
@@ -40,33 +40,6 @@ const StudentRegistration: React.FC = () => {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
-
-  const { showConfirm, dialogProps } = useNavigationConfirm({
-    title: "Dados não salvos",
-    message: "Você tem alterações não salvas. Deseja realmente sair sem salvar?",
-    confirmText: "Sair sem salvar",
-    cancelText: "Continuar editando",
-    shouldConfirm: hasUnsavedChanges
-  });
-
-  // Detectar mudanças no formulário
-  useEffect(() => {
-    const hasData = Object.values(formData).some(value => value.trim() !== '');
-    setHasUnsavedChanges(hasData);
-  }, [formData, setHasUnsavedChanges]);
-
-  // Interceptar navegação do browser (botão voltar, fechar aba, etc.)
-  useEffect(() => {
-    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      if (hasUnsavedChanges) {
-        e.preventDefault();
-        e.returnValue = '';
-      }
-    };
-
-    window.addEventListener('beforeunload', handleBeforeUnload);
-    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
-  }, [hasUnsavedChanges]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;

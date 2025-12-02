@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useApp } from '../../context/AppContext';
+import { useSupabase } from '../../context/SupabaseContext';
 import { useAccessControl } from '../../components/AccessControl';
 import { useNavigationConfirm } from '../../hooks/useNavigationConfirm';
 import Card from '../../components/ui/Card';
@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 
 const AdminDashboard: React.FC = () => {
-  const { students, enrollments, polos, logout, currentUser } = useApp();
+  const { students, enrollments, polos, logout, currentUser } = useSupabase();
   const {
     canManageUsers,
     canManageStaff,
