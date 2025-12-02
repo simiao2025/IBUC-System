@@ -13,6 +13,13 @@ import { User, Users, MapPin, Phone, Mail } from 'lucide-react';
 const StudentRegistration: React.FC = () => {
   const navigate = useNavigate();
   const { addStudent } = useSupabase();
+  const { dialogProps } = useNavigationConfirm({
+    title: 'Confirmar Saída',
+    message: 'Você tem alterações não salvas. Deseja realmente sair desta página?',
+    confirmText: 'Sim, sair',
+    cancelText: 'Não, continuar'
+  });
+  const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
   const [formData, setFormData] = useState({
     // Student data
     name: '',
@@ -110,43 +117,49 @@ const StudentRegistration: React.FC = () => {
 
     setLoading(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
 
-    const studentData: Partial<StudentData> = {
-      id: Math.random().toString(36).substr(2, 9),
-      name: formData.name,
-      birthDate: formData.birthDate,
-      cpf: formData.cpf,
-      gender: formData.gender as 'male' | 'female' | 'other',
-      phone: formData.phone,
-      email: formData.email,
-      address: {
-        cep: formData.cep,
-        street: formData.street,
-        number: formData.number,
-        complement: formData.complement,
-        neighborhood: formData.neighborhood,
-        city: formData.city,
-        state: formData.state,
-      },
-      parents: {
-        fatherName: formData.fatherName,
-        motherName: formData.motherName,
-        phone: formData.parentsPhone,
-        email: formData.parentsEmail,
-        fatherCpf: formData.fatherCpf,
-        motherCpf: formData.motherCpf,
-      }
-    };
+      const studentData: StudentData = {
+        id: Math.random().toString(36).substr(2, 9),
+        name: formData.name,
+        birthDate: formData.birthDate,
+        cpf: formData.cpf,
+        gender: formData.gender as 'male' | 'female' | 'other',
+        phone: formData.phone,
+        email: formData.email,
+        address: {
+          cep: formData.cep,
+          street: formData.street,
+          number: formData.number,
+          complement: formData.complement,
+          neighborhood: formData.neighborhood,
+          city: formData.city,
+          state: formData.state,
+        },
+        parents: {
+          fatherName: formData.fatherName,
+          motherName: formData.motherName,
+          phone: formData.parentsPhone,
+          email: formData.parentsEmail,
+          fatherCpf: formData.fatherCpf,
+          motherCpf: formData.motherCpf,
+        }
+      };
 
-    addStudent(studentData);
-    setHasUnsavedChanges(false);
-    
-    alert("Aluno cadastrado com sucesso!");
-    
-    setLoading(false);
-    navigate('/matricula');
+      await addStudent(studentData);
+      setHasUnsavedChanges(false);
+      
+      alert("Aluno cadastrado com sucesso!");
+      
+      navigate('/matricula');
+    } catch (error) {
+      console.error('Erro ao cadastrar aluno:', error);
+      alert("Erro ao cadastrar aluno. Tente novamente.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const genderOptions = [
